@@ -1,0 +1,57 @@
+{
+  "name": "svelte-app",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "start": "sirv public",
+    "app": "electron .",
+    "app-dev": "concurrently \"npm:dev\" \"npm:app\""
+  },
+  "main": "main.js",
+  "build": {
+    "appId": "com.suvai.desktopApp",
+    "buildVersion": "01",
+    "productName": "Suvai",
+    "icon": "./assets/Icon.icns",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "./entitlements.plist",
+      "entitlementsInherit": "./entitlements.plist"
+    },
+    "win": {
+      "target": "msi"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "afterSign": "./afterSignHook.js"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.0",
+    "concurrently": "^5.3.0",
+    "electron": "^10.1.5",
+    "electron-builder": "^21.2.0",
+    "electron-is-dev": "^1.2.0",
+    "electron-packager": "^14.2.1",
+    "electron-rebuild": "^1.8.6",
+    "electron-reload": "^1.5.0",
+    "rollup": "^2.3.4",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-svelte": "^6.0.0",
+    "rollup-plugin-terser": "^7.0.0",
+    "svelte": "^3.0.0"
+  },
+  "dependencies": {
+    "esm": "^3.2.25",
+    "sirv-cli": "^1.0.0",
+    "svelte-file-dropzone": "0.0.12",
+    "node-xlsx": "^0.15.0"
+  }
+}
