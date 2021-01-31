@@ -14,7 +14,6 @@
   "main": "main.js",
   "build": {
     "appId": "com.suvai.suvaiApp",
-    "buildVersion": "01",
     "productName": "Suvai",
     "icon": "./assets/Icon.icns",
     "copyright": "Copyright © 2019 ${author}",
